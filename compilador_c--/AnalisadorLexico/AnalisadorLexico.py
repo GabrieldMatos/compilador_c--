@@ -225,7 +225,7 @@ def q0(codigo, indice):
 
     if(codigo[indice] == "!"):
         indice+=1
-        return q7(codigo,indice)
+        return q6(codigo,indice)
 
 
     if(codigo[indice] == "o"):
@@ -430,7 +430,7 @@ def q1(codigo, indice):
 
     if(codigo[indice] == "."):
         indice+=1
-        return q8(codigo,indice)
+        return q7(codigo,indice)
 
     if(codigo[indice] == "4"):
         indice+=1
@@ -866,21 +866,64 @@ def q6(codigo, indice):
         return q2(codigo,indice)
 
     return False
-
 def q7(codigo, indice):
-
     if(indice == len(codigo)):
         palavra = codigo[0:indice]
         linha = TABELA.insere(palavra)
         TOKENS.append(Token(palavra, linha))
         return False
-
-
-    if(codigo[indice] == "="):
+    
+    if(codigo[indice] == "4"):
         indice+=1
-        return q2(codigo,indice)
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "7"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "0"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "3"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "6"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "1"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "9"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "8"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "5"):
+        indice+=1
+        return q8(codigo,indice)
+
+
+    if(codigo[indice] == "2"):
+        indice+=1
+        return q8(codigo,indice)
 
     return False
+
 def q8(codigo, indice):
     if(indice == len(codigo)):
         palavra = codigo[0:indice]
