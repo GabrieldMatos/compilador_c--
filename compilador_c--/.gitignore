@@ -1,3 +1,2 @@
-./__pycache__
-./AnalisadorLexico/__pycache__
+*.pyc
 .vscode
