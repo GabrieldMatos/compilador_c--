@@ -88,21 +88,18 @@ class Gerenciador:
 
 
     def getTipoToken(self, palavra):
-        if(palavra in self.operadores):
-            return self.operadores[palavra]
-        if(palavra in self.separadores):
-            return self.separadores[palavra]
-        if(palavra in self.palavrasChaves):
-            return self.palavrasChaves[palavra]
         if(palavra.isdigit()):
-            return TipoToken.IntLiteral
+                return TipoToken.IntLiteral
         try:
             float(palavra)
             return TipoToken.FloatLiteral
         except ValueError:
-            if(palavra.isdigit()):
-                return TipoToken.IntLiteral
-        
+            if(palavra in self.operadores):
+                return self.operadores[palavra]
+            if(palavra in self.separadores):
+                return self.separadores[palavra]
+            if(palavra in self.palavrasChaves):
+                return self.palavrasChaves[palavra]       
 
         if(palavra[0] == "'" and palavra[len(palavra) - 1] == "'"):
             return TipoToken.CharLiteral

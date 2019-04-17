@@ -14,7 +14,7 @@ def main(args):
     arquivo = open(args[1], 'r')
     linhas = arquivo.read().splitlines()
     linhas = preProcessamento(linhas)
-    print(linhas)
+    #print(linhas)
     resultadoAnaliseLexica = AnalisadorLexico.main(linhas)
 
     tokens = resultadoAnaliseLexica[0]
@@ -52,7 +52,6 @@ def preProcessamento(linhas):
     dicBinarios = {
         "!=" : "!=",
         "==" : "==",
-        "++" : "++",
         ">=" : ">=",
         "<=" : "<="
     }
@@ -79,7 +78,7 @@ def preProcessamento(linhas):
         j = 0
         while(j < len(linhas[i]) - 1):
             teste = linhas[i][j : j + 2]
-            if(linhas[i][j] == "/" and linhas[i][j+1] == "*"):
+            if(linhas[i][j] == "/" and linhas[i][j+1] == "*" and linhas[i][len(linhas[i])-2] == "*" and linhas[i][len(linhas[i])-1] == "/"):
                 j = len(linhas[i]) - 1
             elif(teste in dicBinarios):
                 arrayLinha.append(teste)
@@ -92,11 +91,8 @@ def preProcessamento(linhas):
                 palavra = linhas[i][j]
                 k = j + 1
                 aspasSimples = False
-                aspasDuplas = False
                 if(linhas[i][j] == "'"):
                     aspasSimples = True
-                elif(linhas[i][j] == '"'):
-                    aspasDuplas = True
                 acabou = False
                 if(aspasSimples):
                     while(k < len(linhas[i]) and (linhas[i][k] != "'" or linhas[i][k - 1] == "\\")):
@@ -106,16 +102,6 @@ def preProcessamento(linhas):
                         palavra += linhas[i][k]
                     arrayLinha.append(palavra)
                     j = k
-
-                elif(aspasDuplas):
-                    while(k < len(linhas[i]) and (linhas[i][k] != '"' or linhas[i][k - 1] == "\\")):
-                        palavra += linhas[i][k]
-                        k += 1
-                    if(k < len(linhas[i])):
-                        palavra += linhas[i][k]
-                    arrayLinha.append(palavra)
-                    j = k
-
                 else:
                     while(k < (len(linhas[i]) - 1) and not acabou):
                         teste = linhas[i][k : k + 2]

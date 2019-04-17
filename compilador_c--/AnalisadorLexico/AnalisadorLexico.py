@@ -225,7 +225,7 @@ def q0(codigo, indice):
 
     if(codigo[indice] == "!"):
         indice+=1
-        return q4(codigo,indice)
+        return q7(codigo,indice)
 
 
     if(codigo[indice] == "o"):
@@ -276,7 +276,7 @@ def q0(codigo, indice):
 
     if(codigo[indice] == ">"):
         indice+=1
-        return q7(codigo,indice)
+        return q5(codigo,indice)
 
 
     if(codigo[indice] == "H"):
@@ -301,7 +301,7 @@ def q0(codigo, indice):
 
     if(codigo[indice] == "<"):
         indice+=1
-        return q6(codigo,indice)
+        return q5(codigo,indice)
 
 
     if(codigo[indice] == "p"):
@@ -873,7 +873,7 @@ def q7(codigo, indice):
         palavra = codigo[0:indice]
         linha = TABELA.insere(palavra)
         TOKENS.append(Token(palavra, linha))
-        return True
+        return False
 
 
     if(codigo[indice] == "="):
