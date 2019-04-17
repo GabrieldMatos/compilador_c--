@@ -14,7 +14,6 @@ def main(args):
     arquivo = open(args[1], 'r')
     linhas = arquivo.read().splitlines()
     linhas = preProcessamento(linhas)
-    #print(linhas)
     resultadoAnaliseLexica = AnalisadorLexico.main(linhas)
 
     tokens = resultadoAnaliseLexica[0]
