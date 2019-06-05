@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from AnalisadorLexico.Token import Token
-from AnalisadorLexico.TabelaDeSimbolos import TabelaDeSimbolos
+from Token import Token
+from TabelaDeSimbolos import TabelaDeSimbolos
 
 TABELA = TabelaDeSimbolos()
 TOKENS = []
@@ -1048,7 +1048,7 @@ def main(linhas):
         for item in range(len(linhas[lin])):
             if(linhas[lin][item] != ''):
                 if(not q0(linhas[lin][item], 0)):
-                    ERROS.append((linhas[lin][item], lin + 1, cont + 1, "Sintaxe inválida"))
+                    ERROS.append((linhas[lin][item], lin + 1, cont + 1, "Lexema inválido"))
                 else:
                     TOKENS_E_DADOS.append(([linhas[lin][item], lin + 1, cont + 1, TOKENS[-1].getTipoToken()]))
                 cont += len(linhas[lin][item])

@@ -3,7 +3,7 @@
 
 from enum import Enum
 import re
-from AnalisadorLexico.Auto import Auto
+from Auto import Auto
 
 class TipoToken(Enum):
     auto = Auto()

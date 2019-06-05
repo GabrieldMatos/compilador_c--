@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from AnalisadorSintatico import AnalisadorSintatico
 from AnalisadorLexico import AnalisadorLexico
 from texttable import Texttable
 import sys
@@ -21,11 +22,26 @@ def main(args):
     dadosTokens = resultadoAnaliseLexica[2]
     errosLexicos = resultadoAnaliseLexica[3]
 
-    imprimeTokens(dadosTokens)
+    #imprimeTokens(dadosTokens)
     imprimeErros(errosLexicos)
     imprimeTabela(tabela)
 
+    resultadoAnaliseSintatica = AnalisadorSintatico.main(tokens)
+    imprimeErrosAnaliseSintatica(resultadoAnaliseSintatica, dadosTokens)
 
+def imprimeErrosAnaliseSintatica(erros, dadosTokens):
+    saida = ""
+    for erro in erros:
+        if(erro[0] == -1):
+            saida += "Esperado o token <" + erro[1] + "> antes do fim do arquivo.\n"
+        else:
+            saida += "Esperado o token <" + str(erro[1])
+            saida += "> porém foi encontrado '"
+            saida += str(dadosTokens[erro[0]][0])
+            saida += "', a.k.a <" + str(dadosTokens[erro[0]][3]) + ">\n"
+            saida += "Linha: " + str(dadosTokens[erro[0]][1]) + "\nColuna "
+            saida += str(dadosTokens[erro[0]][2]) + "\n"
+    print(saida)
 
 def imprimeTokens(dadosTokens):
     for item in dadosTokens:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from AnalisadorLexico.Gerenciador import Gerenciador
+from Gerenciador import Gerenciador
 
 class Token:
     tipoToken = None

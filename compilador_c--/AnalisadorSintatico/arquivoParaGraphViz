@@ -1,0 +1,105 @@
+0 compilationUnit 0 None
+1 <PCInicial> 1 0
+2 listDeclaration 1 0
+3 declaration 2 2
+4 funDeclaration 3 3
+5 <PCVoid> 4 4
+6 <Identificador, 0> 5 5
+7 <SepAbreParenteses> 5 5
+8 params 5 5
+9 <SepFechaParenteses> 5 5
+10 blockDeclaration 5 5
+11 <SepAbreChaves> 6 10
+12 localDeclaration 6 10
+13 varDeclaration 7 12
+14 <PCInt> 8 13
+15 <Identificador, 1> 8 13
+16 <SepPontoVirgula> 8 13
+17 varDeclaration 7 12
+18 <PCInt> 8 17
+19 <Identificador, 2> 8 17
+20 <SepPontoVirgula> 8 17
+21 varDeclaration 7 12
+22 <PCInt> 8 21
+23 <Identificador, 3> 8 21
+24 <SepPontoVirgula> 8 21
+25 commandList 6 10
+26 command 7 25
+27 exprDecl 8 26
+28 expr 9 27
+29 var 10 28
+30 <Identificador, 4> 11 29
+31 expr 10 28
+32 SimpleExpr 11 31
+33 sumExpr 12 32
+34 termo 13 33
+35 fator 14 34
+36 termo 15 35
+37 <IntLiteral, 5> 16 36
+38 <SepPontoVirgula> 9 27
+39 command 7 25
+40 exprDecl 8 39
+41 expr 9 40
+42 var 10 41
+43 <Identificador, 6> 11 42
+44 expr 10 41
+45 SimpleExpr 11 44
+46 sumExpr 12 45
+47 termo 13 46
+48 fator 14 47
+49 termo 15 48
+50 <IntLiteral, 7> 16 49
+51 <SepPontoVirgula> 9 40
+52 command 7 25
+53 exprDecl 8 52
+54 expr 9 53
+55 var 10 54
+56 <Identificador, 8> 11 55
+57 expr 10 54
+58 SimpleExpr 11 57
+59 sumExpr 12 58
+60 termo 13 59
+61 fator 14 60
+62 termo 15 61
+63 <IntLiteral, 9> 16 62
+64 <SepPontoVirgula> 9 53
+65 command 7 25
+66 selecDecl 8 65
+67 <PCIf> 9 66
+68 <SepAbreParenteses> 9 66
+69 expr 9 66
+70 var 10 69
+71 <Identificador, 10> 11 70
+72 SimpleExpr 10 69
+73 sumExpr 11 72
+74 termo 12 73
+75 fator 13 74
+76 var 14 75
+77 <OpMaiorIgual> 11 72
+78 sumExpr 11 72
+79 termo 12 78
+80 fator 13 79
+81 var 14 80
+82 <Identificador, 11> 15 81
+83 <SepFechaParenteses> 9 66
+84 command 9 66
+85 exprDecl 10 84
+86 expr 11 85
+87 var 12 86
+88 <Identificador, 12> 13 87
+89 SimpleExpr 12 86
+90 sumExpr 13 89
+91 termo 14 90
+92 fator 15 91
+93 var 16 92
+94 <OpSoma> 14 90
+95 termo 14 90
+96 fator 15 95
+97 var 16 96
+98 <Identificador, 13> 17 97
+99 <OpMultiplicacao> 15 95
+100 fator 15 95
+101 var 16 100
+102 <Identificador, 14> 17 101
+103 <SepPontoVirgula> 11 85
+104 <SepFechaChaves> 6 10
