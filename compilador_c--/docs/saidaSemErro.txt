@@ -1,3 +1,40 @@
+Saída para o código testeC--.cpp
+
+
+
+
+
+programa
+void main(){
+    int a;
+    int b;
+    a = a+b/10;
+}
+
+
+
+
+
+
+
++-------+--------+
+| Linha | Lexema |
++=======+========+
+| 1     | main   |
++-------+--------+
+| 2     | a      |
++-------+--------+
+| 3     | b      |
++-------+--------+
+| 4     | a      |
++-------+--------+
+| 5     | a      |
++-------+--------+
+| 6     | b      |
++-------+--------+
+| 7     | 10     |
++-------+--------+
+______ARVORE_____
 0 compilationUnit 0 None
 1 <PCInicial> 1 0
 2 listDeclaration 1 0
@@ -44,3 +81,5 @@
 43 <IntLiteral, 6> 16 42
 44 <SepPontoVirgula> 9 23
 45 <SepFechaChaves> 6 10
+
+_______FIM ARVORE_______

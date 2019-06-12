@@ -1,0 +1,57 @@
+Saída para codigo testeErro.cpp
+
+
+
+
+programa
+struct master 
+	int a;
+	int b;
+}
+
+
+
+
+
++-------+--------+
+| Linha | Lexema |
++=======+========+
+| 1     | master |
++-------+--------+
+| 2     | a      |
++-------+--------+
+| 3     | b      |
++-------+--------+
+______ARVORE_____
+0 compilationUnit 0 None
+1 <PCInicial> 1 0
+2 listDeclaration 1 0
+3 declaration 2 2
+4 varDeclaration 3 3
+5 <PCStruct> 4 4
+6 <Identificador, 0> 4 4
+7 declaration 2 2
+8 varDeclaration 3 7
+9 declaration 2 2
+10 varDeclaration 3 9
+11 declaration 2 2
+12 varDeclaration 3 11
+13 <PCInt> 4 12
+14 <Identificador, 2> 4 12
+15 <SepPontoVirgula> 4 12
+16 declaration 2 2
+17 varDeclaration 3 16
+
+_______FIM ARVORE_______
+Esperado o token <SepAbreChaves> porém foi encontrado 'int', a.k.a <PCInt>
+Linha: 3
+Coluna 2
+Esperado o token <Int, Float, Char, Struct or Void> porém foi encontrado 'a', a.k.a <Identificador>
+Linha: 3
+Coluna 6
+Esperado o token <Int, Float, Char, Struct or Void> porém foi encontrado ';', a.k.a <SepPontoVirgula>
+Linha: 3
+Coluna 7
+Esperado o token <Int, Float, Char, Struct or Void> porém foi encontrado '}', a.k.a <SepFechaChaves>
+Linha: 5
+Coluna 1

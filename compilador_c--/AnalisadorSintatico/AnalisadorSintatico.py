@@ -128,6 +128,9 @@ def varDeclaration(tokens, i, pai):
                     addArvoreSintatica(noh, str(tokens[i]))
                     i+=1
                 else:
+                    if acabaramOsTokens(tokens, i):
+                        return i
+
                     erroTokenInesperado(tokens[i],"SepFechaChaves", i)
                     i+=1
             else:
@@ -243,6 +246,8 @@ def blockDeclaration(tokens, i, pai):
             addArvoreSintatica(noh, str(tokens[i]))
             i += 1   
         else:
+            if acabaramOsTokens(tokens, i):
+                return i
             erroTokenInesperado(tokens[i],"SepFechaChaves", i)
             i+=1
     else:
